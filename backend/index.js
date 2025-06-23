@@ -3,7 +3,9 @@ const app = express();
 const cors = require("cors");
 
 
-
+app.use(cors({
+  origin: "https://admin-panel-in-school.netlify.app"
+}));
 
 const allowedurl = 'http://localhost:3000';
 const corsOptions = {
@@ -32,7 +34,7 @@ app.use(limiter);
 
 //db connection start
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/project");
+mongoose.connect("mongodb+srv://admin:admin@try-mern-to-production.ut0kcox.mongodb.net/project");
 const db = mongoose.connection;
 
 db.on("error",(error) => console.log("Error in database connection"));
