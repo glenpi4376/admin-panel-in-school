@@ -4,7 +4,9 @@ const cors = require("cors");
 
 
 app.use(cors({
-  origin: "https://admin-panel-in-school.netlify.app"
+  origin: "https://admin-panel-in-school.netlify.app",
+  methods: 'GET, POST, PUT, PATCH, DELETE',
+    credentials: true
 }));
 
 const allowedurl = 'http://localhost:3000';
